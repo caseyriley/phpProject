@@ -7,7 +7,7 @@
   <title>Document</title>
 </head>
 <body>
-  
+  <?php include "header.html" ?>
 
   <!-- <form action="site.php" method="get">
       Name: <input type="text" name="name">
@@ -105,14 +105,73 @@
   ?>
   <br> -->
 
-  Functions
-  <?php 
+
+  <!-- <?php 
     function sayHi($name){
       echo "Hi $name";
     }
     sayHi("dude");
     sayHi("dudet");
-  ?>
+  ?> -->
+<!-- 
+
+  If Statements
+  <?php 
+    $isMale = true;
+    $isMale = false;
+    $isTall = true;
+    if ($isMale && $isTall){
+      echo "is a dude";
+    }else if ($isMale && !$isTall){
+      echo "is a shorty";
+    } else {
+      echo "is a lady";
+    } 
+  ?> -->
+
+Switch Case
+    <!-- <form action="site.php" method="post">
+      What was your grade?
+      <input type="text" name="grade">
+      <input type="submit">
+    </form>
+
+    <?php 
+      $grade = $_POST["grade"];
+      switch($grade){
+        case "A":
+          echo "You did amazing!";
+        case "B":
+          echo "You did pretty good";
+        case "C":
+          echo "you did aight";
+          break;
+        default:
+          echo "invalid";
+      }
+    ?> -->
+
+    While Loop 
+
+    <?php 
+      $index = 1;
+      while($index <= 5){
+        echo "index <br>";
+        $index ++;
+      }
+    ?>
+
+    For Loop
+    <?php 
+          for ($i = 1; $i <= 5; $i ++){
+            echo "$i <br>";
+          }
+    ?>
+
+   
+    <?php include "footer.html"?>
+
+
 
 
 </body>
