@@ -4,10 +4,19 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
   <title>Document</title>
 </head>
 <body>
   <?php include "header.html" ?>
+
+  <?php 
+  $option1 = "home";
+  $option2 = "about";
+  $option3 = "store";
+  $option4 = "contact";
+  
+  include "article.nav.php"?>
 
   <!-- <form action="site.php" method="get">
       Name: <input type="text" name="name">
@@ -136,7 +145,7 @@ Switch Case
       <input type="submit">
     </form>
 
-    <?php 
+    <!-- <?php 
       $grade = $_POST["grade"];
       switch($grade){
         case "A":
@@ -166,7 +175,77 @@ Switch Case
           for ($i = 1; $i <= 5; $i ++){
             echo "$i <br>";
           }
-    ?>
+    ?> -->
+
+    <br>
+
+  <?php 
+    class Book {
+      public $title;
+      public $author;
+      public $pages;
+
+      public $genre; //interchangeable with var
+      private $rating; //private property variable
+ 
+
+      function __construct($aTitle,$aAuthor, $aPages, $aRating){
+        $this->title = $aTitle;
+        $this->author = $aAuthor;
+        $this->title = $aPages;
+        $this->setRating($aRating);
+      }
+
+      function hasAuthor(){
+        if ($this->author){
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      function getRating(){ //return private variable
+        return $this->rating;
+      }
+      function setRating($rating){
+        if($rating == "G" || $rating == "PG" || $rating == "NR"){
+          $this->rating = $rating;
+        } else {
+          $this->rating = "NR";
+        }
+      }
+    }
+
+    $book1 = new Book("Harry Potter", "JK", 400, "G");
+
+    // $book1->title = "Harry Potter";
+    // $book1->author = "JK";
+    // $book1->pages = 400;
+
+    echo $book1->author;
+    echo "-------->";
+     
+    echo $book1->hasAuthor();
+    echo "<br>";
+    echo $book1->getRating();
+
+    class Sequal extends Book {
+      function isSequal(){
+        echo "this is a sequal";
+      }
+    }
+
+    $book7 = new Sequal("Harry Perry", "JK", 599, "PG");
+
+    echo "<br>";
+    $book7->isSequal();
+
+  ?>
+
+    <br>
+
+
+
 
    
     <?php include "footer.html"?>
